@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { useLoginMutation } from '../api/authLog';
 
-import './css/home.css';
+import './css/login.css';
 
 function Login() {
   const [username, setUsername] = useState('');
