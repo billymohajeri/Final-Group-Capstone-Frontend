@@ -8,6 +8,14 @@ export const roomsApi = createApi({
       query: () => '/rooms',
       providesTags: ['Rooms'],
     }),
+    deleteRoom: builder.mutation({
+      query: (roomId) => ({
+        url: `/rooms/${roomId}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['Rooms'],
+    }),
   }),
 });
-export const { useGetRoomsDetailsQuery } = roomsApi;
+
+export const { useGetRoomsDetailsQuery, useDeleteRoomMutation } = roomsApi;
