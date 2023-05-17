@@ -1,4 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import {
   FaSuitcaseRolling,
@@ -13,6 +16,7 @@ import './css/login.css';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
   const [login] = useLoginMutation();
   const navigate = useNavigate();
@@ -28,7 +32,8 @@ function Login() {
       .then(() => {
         navigate('/home');
       })
-      .catch(() => {
+      .catch((error) => {
+        setError(error.data.message);
       });
   };
 
@@ -36,7 +41,7 @@ function Login() {
     <div
       className="login-background"
       style={{
-        backgroundImage: 'url(/login.jpg)',
+        backgroundImage: 'url(/cases.jpeg)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -45,12 +50,12 @@ function Login() {
         <FaGripLines />
       </div>
       <div>
-        <h1>Reserve Your Dream Trip!</h1>
+        <h1>Reserve Your Room</h1>
+        {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit} className="form">
-          <label htmlFor="username">
+          <label>
             <input
               type="text"
-              id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               name="username"
@@ -58,10 +63,9 @@ function Login() {
             />
           </label>
           <br />
-          <label htmlFor="password">
+          <label>
             <input
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
