@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable comma-dangle */
 import React from 'react';
 import swal from 'sweetalert';
 import { FaRegWindowClose } from 'react-icons/fa';
@@ -9,6 +7,7 @@ import {
   useGetReservationsQuery,
 } from '../api/reservationsData';
 import './css/reservation.css';
+import Sidebar from './Sidebar';
 
 function Reservations() {
   const { data: currentUserData } = useCurrentUserQuery();
@@ -61,7 +60,7 @@ function Reservations() {
   }
 
   const userReservations = reservationsData.filter(
-    (reservation) => reservation.user_id === currentUserData.id
+    (reservation) => reservation.user_id === currentUserData.id,
   );
 
   if (userReservations.length === 0) {
@@ -69,32 +68,35 @@ function Reservations() {
   }
 
   return (
-    <div className="reservationBody">
-      <div className="reservationContainer">
-        {userReservations.map((reservation) => (
-          <div className="detailsContainer" key={reservation.id}>
-            <div>
-              <p>{reservation.room_name}</p>
-              <p>
-                City:&nbsp;
-                {reservation.city}
-              </p>
-              <p>
-                Date:&nbsp;
-                {reservation.date}
-              </p>
+    <div className="bigContainer">
+      <Sidebar />
+      <div className="reservationBody">
+        <div className="reservationContainer">
+          {userReservations.map((reservation) => (
+            <div className="detailsContainer" key={reservation.id}>
+              <div>
+                <p>{reservation.room_name}</p>
+                <p>
+                  City:&nbsp;
+                  {reservation.city}
+                </p>
+                <p>
+                  Date:&nbsp;
+                  {reservation.date}
+                </p>
+              </div>
+              <button
+                onClick={() => handleDelete(reservation.id, reservation.room_name)}
+                disabled={isLoading}
+                type="button"
+                className="myButton cancel"
+              >
+                <FaRegWindowClose />
+                Delete
+              </button>
             </div>
-            <button
-              onClick={() => handleDelete(reservation.id, reservation.room_name)}
-              disabled={isLoading}
-              type="button"
-              className="myButton cancel"
-            >
-              <FaRegWindowClose />
-              Delete
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
