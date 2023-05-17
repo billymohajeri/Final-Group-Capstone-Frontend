@@ -22,6 +22,13 @@ export const roomsApi = createApi({
       }),
       invalidatesTags: ['Rooms'],
     }),
+    createReservation: builder.mutation({
+      query: (reservation) => ({
+        url: '/reservations',
+        method: 'POST',
+        body: reservation,
+      }),
+    }),
   }),
 });
 
@@ -29,4 +36,5 @@ export const {
   useGetRoomsDetailsQuery,
   useCreateRoomMutation,
   useDeleteRoomMutation,
+  useCreateReservationMutation,
 } = roomsApi;
