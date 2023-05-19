@@ -41,7 +41,7 @@ function Login() {
     <div
       className="login-background"
       style={{
-        backgroundImage: 'url(/cases.jpeg)',
+        backgroundImage: 'url(/login.jpg)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
