@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# 📗 Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+  - [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Create database](#create-database)
+- [👥 Authors](#authors)
+- [📊 Kanban Board ](#kanban)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-## Available Scripts
+# 📖 Hotel booking app <a name="about-project"></a>
 
-In the project directory, you can run:
+**Hotel booking app** is a booking app that allows users to search a list of available rooms and make 24-hour reservations. This is the frontend repository.
 
-### `npm start`
+Backend repo is [here](https://github.com/billymohajeri/Final-Group-Capstone-Backend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Built With <a name="built-with"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm test`
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+  <summary>Bundle</summary>
+  <ul>
+    <li><a href="https://webpack.js.org/">WebPack</a></li>
+    <li><a href="https://www.npmjs.com/">NPM</a></li>
+  </ul>
+</details>
 
-### `npm run build`
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
+  </ul>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Key Features <a name="key-features"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Create new user**
+- **Create new room**
+- **Delete room**
+- **Add reservation**
+- **Display my reservations list**
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Live Demo <a name="live-demo"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Not yet...]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💻 Getting Started <a name="getting-started"></a>
 
-## Learn More
+To get a local copy up and running, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to run this project you need:
 
-### Code Splitting
+- [Ruby on Rails](https://rubyonrails.org/) installed and running. To get more information, read the [installation guide](https://guides.rubyonrails.org/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [PostgreSQL](https://www.postgresql.org/) installed and running.
 
-### Analyzing the Bundle Size
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clone this repository to your desired folder:
 
-### Making a Progressive Web App
+Clone the back-end repo
+```
+git clone git@github.com:billymohajeri/Final-Group-Capstone-Backend.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Clone the front-end repo
+```
+git clone git@github.com:billymohajeri/Final-Group-Capstone-Frontend.git
+```
 
-### Advanced Configuration
+### Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Install the backend project with:
 
-### Deployment
+```cd Final-Group-Capstone-Backend```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bundle install``` to install all gems used.
 
-### `npm run build` fails to minify
+```rails db:create``` to create the database.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```rails db:migrate``` to run the database migrations you created.
+
+```rails db:seed``` to add a new uer to the database.
+
+`rails s` to run the dev server.
+
+Go to http://localhost:3000/api-docs/index.html to see API documentation.
+
+Install the frontend project with:
+
+```cd Final-Group-Capstone-Backend```
+
+```npm install``` to install the app.
+
+```npm start``` ro run the app.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Billy Mohajeri**
+
+- GitHub: [@BillyMohajeri](https://github.com/billymohajeri)
+- Twitter: [@BillyMohajeri](https://twitter.com/BillyMohajeri)
+- LinkedIn: [@BillyMohajeri](https://www.linkedin.com/in/billymohajeri)
+
+👤 **Gaurav Gangwar**
+
+- GitHub: [@gauravgangwarweb](https://github.com/gauravgangwarweb)
+- Twitter: [@gauravgangwar501](https://twitter.com/gauravgangwar501)
+- LinkedIn: [Gaurav Gangwar](https://www.linkedin.com/in/gauravgangwarweb/)
+
+👤 **Botlhale Setou**
+- GitHub: [@Botlhale-Setou](https://github.com/Botlhale-Setou)
+- Twitter: [@Botlhale_Setou](https://twitter.com/BotlhaleSetou)
+- LinkedIn: [@botlhalesetou](https://www.linkedin.com/in/botlhalesetou/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📊 Kanban Board <a name="kanban"></a>
+
+- Link to Kanban Board: [Kanban](https://github.com/users/billymohajeri/projects/6/views/1)
+- Initial state of Kanban board: [Kanban Image](https://user-images.githubusercontent.com/58295348/237707763-a4569c96-d090-4692-92d4-93f411c10427.png) 
+- We are a group of 3 persons.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Improve the application UI**
+- [ ] **Add comment button**
+- [ ] **Improve authentication system**
+- [ ] **Authorization**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, please consider giving it a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- I would like to thank all code reviewers for making this project better.
+
+- Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE/MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
