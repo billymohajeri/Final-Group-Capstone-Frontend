@@ -109,7 +109,8 @@ label {
   font-weight: bold;
 }
 
-input[type='text'] {
+input[type='text'],
+input[type='password'] {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid gray;
