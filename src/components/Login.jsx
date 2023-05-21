@@ -50,11 +50,12 @@ function Login() {
         <FaGripLines />
       </div>
       <div>
-        <h1>Reserve Your Room</h1>
+        <h1 className="title">Embark on a Journey, Reserve Your Stay!</h1>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit} className="form">
           <label>
             <input
+              className="login-input"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -65,6 +66,7 @@ function Login() {
           <br />
           <label>
             <input
+              className="login-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
