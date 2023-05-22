@@ -1,8 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   FaSuitcaseRolling,
   FaChevronCircleRight,
@@ -13,7 +11,7 @@ import { useLoginMutation } from '../api/authLog';
 
 import './css/login.css';
 
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -50,12 +48,11 @@ function Login() {
         <FaGripLines />
       </div>
       <div>
-        <h1 className="title">Embark on a Journey, Reserve Your Stay!</h1>
+        <h1 className="loginH1">Embark on a Journey, Reserve Your Stay!</h1>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit} className="form">
-          <label>
+          <label htmlFor="username">
             <input
-              className="login-input"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -64,9 +61,8 @@ function Login() {
             />
           </label>
           <br />
-          <label>
+          <label htmlFor="password">
             <input
-              className="login-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -80,6 +76,10 @@ function Login() {
             <FaChevronCircleRight />
           </button>
         </form>
+        <p className="signup">
+          Not a member yet?
+          <Link to="/signup"> Sign up!</Link>
+        </p>
       </div>
       <div className="menu-buttons2">
         <div className="glass">
@@ -88,6 +88,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
