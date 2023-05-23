@@ -1,3 +1,11 @@
 .App {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.letter-spacing {
+  letter-spacing: 1.2rem;
+}
+
+.my-green {
+  color: #5b7602;
+}

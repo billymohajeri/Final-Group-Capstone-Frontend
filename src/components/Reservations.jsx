@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { useCurrentUserQuery } from '../api/authLog';
@@ -8,16 +10,16 @@ import {
 } from '../api/reservationsData';
 import './css/reservation.css';
 import Sidebar from './Sidebar';
+import MobileMenu from './MobileMenu';
 
-function Reservations() {
-  const { data: currentUserData } = useCurrentUserQuery();
+const Reservations = () => {
+  const { data: currentUserData, error: userError } = useCurrentUserQuery();
   const [deleteReservation] = useDeleteReservationMutation();
   const {
     data: reservationsData,
     isLoading,
     error,
   } = useGetReservationsQuery();
-  console.log(reservationsData);
 
   const handleDelete = (reservationId, roomName) => {
     swal({
@@ -46,6 +48,16 @@ function Reservations() {
     );
   }
 
+  if (userError) {
+    return (
+      <p>
+        You are not authorized to view this page. Please
+        {' '}
+        <Link to="/"> Log in</Link>
+      </p>
+    );
+  }
+
   if (error) {
     return (
       <p>
@@ -64,12 +76,21 @@ function Reservations() {
   );
 
   if (userReservations.length === 0) {
-    return <p>No reservations</p>;
+    return (
+      <div className="bigContainer">
+        <Sidebar />
+        <MobileMenu />
+        <p className="reservationBody noReservation">
+          You have no reservations
+        </p>
+      </div>
+    );
   }
 
   return (
     <div className="bigContainer">
       <Sidebar />
+      <MobileMenu />
       <div className="reservationBody">
         <div className="reservationContainer">
           {userReservations.map((reservation) => (
@@ -100,6 +121,6 @@ function Reservations() {
       </div>
     </div>
   );
-}
+};
 
 export default Reservations;

@@ -8,10 +8,9 @@ const Reservation = ({ roomId }) => (
   <div
     className="bigContainer"
     style={{
-      backgroundImage: 'url(/reservation.jpg)',
+      backgroundImage: 'url(/reserve.jpg)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      filter: 'green(100%)',
     }}
   >
     <Sidebar />

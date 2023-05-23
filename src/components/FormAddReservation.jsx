@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Flip, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { PropTypes } from 'prop-types';
 import {
   useGetRoomsDetailsQuery,
   useCreateReservationMutation,
 } from '../api/roomsData';
 import { useCurrentUserQuery } from '../api/authLog';
+import { reservationsData } from '../api/reservationsData';
 
 const FormAddReservation = ({ roomId }) => {
   const [user, setUser] = useState({});
@@ -15,6 +19,19 @@ const FormAddReservation = ({ roomId }) => {
   const [createReservation] = useCreateReservationMutation();
   const { data: currentUser } = useCurrentUserQuery();
   const selectedOption = document.getElementById(roomId);
+  const dispatch = useDispatch();
+  const [errorData, setError] = useState(null);
+
+  const notify = () => toast.success('Reservation successfully added', {
+    position: 'top-center',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  });
 
   useEffect(() => {
     setUser(currentUser);
@@ -46,9 +63,12 @@ const FormAddReservation = ({ roomId }) => {
       .unwrap()
       .then((result) => {
         console.log('Reservation created successfully:', result);
+        notify();
+        dispatch(reservationsData.util.resetApiState());
       })
       .catch((error) => {
         console.error('Error creating reservation:', error);
+        setError(error.data);
       });
   };
 
@@ -57,18 +77,19 @@ const FormAddReservation = ({ roomId }) => {
   }
 
   return (
-    <div className="flex flex-col justify-center w-[1200px] h-[600px] items-center bg-lime-500">
-      <p className="text-4xl text-white">RESERVE A ROOM</p>
-      <p className="border-b border-white opacity-40 w-[900px] m-6" />
-      <p className="text-white">
-        There are different rooms from various locations available. Choose frm
-        the options and reserve a room now by filling the form below.
+    <div className="addReservationForm flex flex-col justify-center items-center h-screen">
+      <p className="text-4xl text-white font-medium letter-spacing">RESERVE A ROOM</p>
+      <p className="border-b border-white opacity-40 m-6" />
+      <p className="reservationSlogan text-white">
+        There are rooms from a variety of locations available.
+        Fill out the form below to reserve a room by selecting from the available options.
       </p>
+      {errorData && <div className="error">{errorData.base}</div>}
       <form
-        className="bg-lime-500 flex flex-col justify-center items-center w-[450px] h-[650px] text-black"
+        className="flex flex-col justify-center items-center text-black"
         onSubmit={handleSubmit}
       >
-        <label htmlFor="username">
+        <label htmlFor="username" style={{ display: 'none' }}>
           <span className="text-white">Userame</span>
           <br />
           <input
@@ -85,9 +106,9 @@ const FormAddReservation = ({ roomId }) => {
           htmlFor={room}
           onChange={(e) => setRoom(e.target.value)}
           value={room}
-          className="w-[300px] bg-transparent border-2 border-white-500 rounded-lg h-[35px] text-white"
+          className="w-[300px] bg-white border-2 border-white-500 rounded-lg h-[35px]"
         >
-          <option className="text-white">Select a room...</option>
+          <option className="text-black">Select a room...</option>
           {data.map((room) => (
             <option key={room.id} value={room.id} id={room.id}>
               {' '}
@@ -123,11 +144,24 @@ const FormAddReservation = ({ roomId }) => {
         <br />
         <button
           type="submit"
-          className="bg-white w-[180px] h-[35px] rounded-lg text-lime-400"
+          className="bg-white h-[35px] rounded-lg addReserveButton my-green"
         >
           Reserve
         </button>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        transition={Flip}
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 };
