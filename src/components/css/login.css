@@ -39,13 +39,13 @@ h1 {
 input {
   height: 20px !important;
   padding: 14px 10px !important;
-  color: black !important;
+  color: gray !important;
 }
 
 .myButton {
-  background-color: #8dd62c !important;
+  background-color: #88ac0e !important;
   border-radius: 28px;
-  border: 1px solid #8dd62c;
+  border: 1px solid #88ac0e;
   cursor: pointer;
   color: #fff;
   display: flex;
