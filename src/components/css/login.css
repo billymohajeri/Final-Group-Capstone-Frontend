@@ -86,7 +86,9 @@ input {
 }
 
 .signup a {
-  color: #a1f138;
+  color: #88ac0e;
+  text-decoration: underline;
+  text-decoration-color: #fff;
 }
 
 .loginH1 {
