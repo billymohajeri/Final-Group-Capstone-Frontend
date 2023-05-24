@@ -15,7 +15,7 @@ import MobileMenu from './MobileMenu';
 function DeleteRoom() {
   const { data, error, isLoading } = useGetRoomsDetailsQuery();
   const [deleteRoom] = useDeleteRoomMutation();
-  const notify = () => toast.success('Room successfully deleted', {
+  const notify = () => toast.success('Cottage successfully deleted', {
     position: 'top-center',
     autoClose: 1000,
     hideProgressBar: false,
@@ -36,7 +36,7 @@ function DeleteRoom() {
 
   const handleDelete = (roomId, roomName) => {
     if (
-      window.confirm(`Are you sure you want to delete the room "${roomName}"?`)
+      window.confirm(`Are you sure you want to delete the cottage "${roomName}"?`)
     ) {
       const deletedRooms = JSON.parse(localStorage.getItem('deletedRooms')) || [];
       const deletedRoom = data.find((room) => room.id === roomId);

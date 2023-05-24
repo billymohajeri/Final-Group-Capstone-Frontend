@@ -62,8 +62,8 @@ Backend repo is [here](https://github.com/billymohajeri/Final-Group-Capstone-Bac
 ### Key Features <a name="key-features"></a>
 
 - **Create new user**
-- **Create new room**
-- **Delete room**
+- **Create new cottage**
+- **Delete cottage**
 - **Add reservation**
 - **Display my reservations list**
 
