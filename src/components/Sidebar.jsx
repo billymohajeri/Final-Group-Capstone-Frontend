@@ -13,7 +13,6 @@ const Sidebar = () => {
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const handleLogout = () => {
     swal({
       title: 'Are you sure?',
