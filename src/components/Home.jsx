@@ -1,0 +1,71 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+
+import { FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+import { useGetRoomsDetailsQuery } from '../api/roomsData';
+import './css/home.css';
+import Sidebar from './Sidebar';
+import MobileMenu from './MobileMenu';
+
+const Home = () => {
+  const { data, error, isLoading } = useGetRoomsDetailsQuery();
+
+  if (isLoading) {
+    return (
+      <div className="spinnerContainer">
+        <span className="loader" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <p>
+        Error:
+        {error.message}
+      </p>
+    );
+  }
+
+  return (
+    <div className="bigContainer">
+      <MobileMenu />
+      <Sidebar />
+      <div className="mainContainer">
+        <div className="roomsBox">
+          <h1>LATEST COTTAGES</h1>
+          <h2>Please select a cottage</h2>
+          <span className="separatorTop">. . . . . . . . . . . . . .</span>
+          <ul className="roomContainer">
+            {data.map((room) => (
+              <Link key={room.id} to={`/room/${room.id}`}>
+                <li key={room.id}>
+                  <img alt="room" src={room.image_url} />
+                  <h4>{room.name}</h4>
+                  <span className="separator">. . . . . . . . . . . . . .</span>
+                  <p>{room.description}</p>
+                  <div className="icons">
+                    <span className="iconSize">
+                      <FaFacebookF />
+                    </span>
+                    <span className="iconSize">
+                      <FaTwitter />
+                    </span>
+                    <span className="iconSize">
+                      <FaYoutube />
+                    </span>
+                  </div>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
