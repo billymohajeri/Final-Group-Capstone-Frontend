@@ -28,7 +28,6 @@ const FormAddRoom = () => {
         window.location.href = '/home';
       })
       .catch((error) => {
-        // handle error
         console.error(error);
       });
   };
@@ -125,7 +124,7 @@ const FormAddRoom = () => {
           <br />
           <button
             type="submit"
-            className="bg-lime-500 w-[180px] h-[35px] rounded-lg text-white"
+            className="my-bg-green w-[180px] h-[35px] rounded-lg text-white"
           >
             Create Room
           </button>

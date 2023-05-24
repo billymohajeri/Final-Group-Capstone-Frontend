@@ -26,16 +26,46 @@ const Reservations = () => {
       title: 'Are you sure?',
       text: `Once deleted, you will need to create a new reservation for "${roomName}"`,
       icon: 'warning',
-      buttons: true,
+      buttons: {
+        cancel: {
+          text: 'Cancel',
+          value: null,
+          className: 'myButton',
+          visible: true,
+        },
+        confirm: {
+          text: 'Confirm',
+          value: true,
+          className: 'myButton-orange',
+          visible: true,
+        },
+      },
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
         deleteReservation(reservationId);
         swal('Your reservation has been canceled!', {
           icon: 'success',
+          buttons: {
+            cancel: {
+              text: 'Ok',
+              value: null,
+              className: 'myButton',
+              visible: true,
+            },
+          },
         });
       } else {
-        swal('Your reservation is safe!');
+        swal('Your reservation is safe!', {
+          buttons: {
+            cancel: {
+              text: 'Ok',
+              value: null,
+              className: 'myButton',
+              visible: true,
+            },
+          },
+        });
       }
     });
   };

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  // FaLock,
   FaGripLines,
   FaSearch,
   FaUserPlus,
   FaChevronCircleRight,
 } from 'react-icons/fa';
-// import { MdHotel } from 'react-icons/md';
 import './css/signup.css';
 
 function SignUp() {
@@ -29,7 +27,6 @@ function SignUp() {
       });
 
       if (response.ok) {
-        console.log('Success');
         navigate('/');
       } else {
         setError('Error creating user');
@@ -52,10 +49,8 @@ function SignUp() {
         <FaGripLines />
       </div>
       <form className="signupForm" onSubmit={handleSubmit}>
-        {/* <MdHotel className="bed" /> */}
         <h2>Create a new account</h2>
         <div className="login__field">
-          {/* <FaUser /> */}
           <input
             type="text"
             className="login__input"
@@ -67,7 +62,6 @@ function SignUp() {
           />
         </div>
         <div className="login__field">
-          {/* <FaLock /> */}
           <input
             type="password"
             id="password"
@@ -79,7 +73,6 @@ function SignUp() {
           />
         </div>
         <div className="login__field">
-          {/* <FaLock /> */}
           <input
             type="password"
             className="login__input"

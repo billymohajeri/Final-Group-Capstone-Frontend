@@ -16,7 +16,7 @@ function DeleteRoom() {
   const [deleteRoom] = useDeleteRoomMutation();
   const notify = () => toast.success('Room successfully deleted', {
     position: 'top-center',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: false,

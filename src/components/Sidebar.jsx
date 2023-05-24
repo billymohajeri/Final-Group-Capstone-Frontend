@@ -1,7 +1,6 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { useDispatch } from 'react-redux';
-import { MdHotel } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   DASHBOARD_SIDEBAR_BOTTOM_LINKS,
@@ -69,14 +68,14 @@ const Sidebar = () => {
   return (
     <div className="bg-neutral-50 p-3 fixed h-screen flex flex-col text-neutral-900 hidden md:flex">
       <div className="flex items-center gap-2 px-1 py-3 pt-3 pb-9">
-        <MdHotel fontSize={24} />
+        <img className="logo" src="/hotel.png" alt="" />
         <span className="text-neutral-900 text-lg">Hotel Booking</span>
       </div>
       <div className="flex-1 flex flex-col pt-20">
         {DASHBOARD_SIDEBAR_LINKS.map((item) => (
           <SidebarLink key={item.key} item={item} />
         ))}
-        <button type="button" className="logout" onClick={() => handleLogout()}>
+        <button type="button" className="logout hover:bg-neutral-700 hover:text-white no-underline activer:bg-neutral-600 rounded-sm text-base" onClick={() => handleLogout()}>
           Log Out
         </button>
       </div>

@@ -7,5 +7,13 @@
 }
 
 .my-green {
-  color: #5b7602;
+  color: #5b7602 !important;
+}
+
+.my-bg-green {
+  background-color: #5b7602 !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
 }

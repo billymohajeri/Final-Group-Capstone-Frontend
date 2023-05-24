@@ -40,7 +40,7 @@ function DetailRoom() {
 
   const notify = () => toast.success('Reservation successfully added', {
     position: 'top-center',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: false,
@@ -50,10 +50,6 @@ function DetailRoom() {
   });
 
   const handleSave = async () => {
-    console.log('City: ', city);
-    console.log('Date: ', date);
-    console.log(id);
-    console.log(currentUserId);
     const reservationData = {
       city,
       room_name: data.name,
@@ -67,7 +63,6 @@ function DetailRoom() {
       handleClose();
       notify();
     } catch (err) {
-      console.error('Error creating reservation:', err);
       setError(err.data);
     }
   };
@@ -156,7 +151,6 @@ function DetailRoom() {
                     (date) => !isSameDay(date, new Date()),
                   )}
                 />
-                {/* Other form inputs */}
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
@@ -169,7 +163,7 @@ function DetailRoom() {
             </Modal>
             <button
               type="submit"
-              className="mybtn reserveButton"
+              className="myButton"
               onClick={handleShow}
             >
               <FaCog />

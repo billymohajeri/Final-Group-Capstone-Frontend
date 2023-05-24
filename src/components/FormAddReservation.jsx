@@ -24,7 +24,7 @@ const FormAddReservation = ({ roomId }) => {
 
   const notify = () => toast.success('Reservation successfully added', {
     position: 'top-center',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: false,

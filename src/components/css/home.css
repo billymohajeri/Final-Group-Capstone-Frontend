@@ -274,7 +274,7 @@ a {
   .logout {
     padding: 8px 13px;
     text-align: start;
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
     line-height: 1.75rem;
     font-weight: 100;
     color: #171717;
@@ -323,4 +323,8 @@ a {
   text-decoration: none;
   text-shadow: 0 1px 0 #d67f1c;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo {
+  width: 2rem;
 }
