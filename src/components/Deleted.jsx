@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RecentlyDeletedRooms() {
+const RecentlyDeletedRooms = () => {
   const deletedRooms = JSON.parse(localStorage.getItem('deletedRooms')) || [];
 
   return (
@@ -18,6 +18,6 @@ function RecentlyDeletedRooms() {
       </ul>
     </div>
   );
-}
+};
 
 export default RecentlyDeletedRooms;

@@ -24,7 +24,7 @@ import Sidebar from './Sidebar';
 import { reservationsData } from '../api/reservationsData';
 import MobileMenu from './MobileMenu';
 
-function DetailRoom() {
+const DetailRoom = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetRoomDataQuery(id);
   const [showModal, setShowModal] = useState(false);
@@ -190,6 +190,6 @@ function DetailRoom() {
       </div>
     </div>
   );
-}
+};
 
 export default DetailRoom;

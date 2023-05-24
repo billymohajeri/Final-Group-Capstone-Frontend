@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import './css/signup.css';
 
-function SignUp() {
+const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
@@ -95,6 +95,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;

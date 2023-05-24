@@ -2,7 +2,7 @@ import { useCurrentUserQuery } from '../api/authLog';
 import Home from './Home';
 import Login from './Login';
 
-function Test() {
+const Test = () => {
   const { data: currentUserData, isLoading } = useCurrentUserQuery();
 
   if (isLoading) {
@@ -14,6 +14,6 @@ function Test() {
   }
 
   return currentUserData ? <Home /> : <Login />;
-}
+};
 
 export default Test;

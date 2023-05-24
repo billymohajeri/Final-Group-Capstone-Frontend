@@ -12,7 +12,7 @@ import './css/delete.css';
 import Sidebar from './Sidebar';
 import MobileMenu from './MobileMenu';
 
-function DeleteRoom() {
+const DeleteRoom = () => {
   const { data, error, isLoading } = useGetRoomsDetailsQuery();
   const [deleteRoom] = useDeleteRoomMutation();
   const notify = () => toast.success('Cottage successfully deleted', {
@@ -101,6 +101,6 @@ function DeleteRoom() {
       </div>
     </div>
   );
-}
+};
 
 export default DeleteRoom;
