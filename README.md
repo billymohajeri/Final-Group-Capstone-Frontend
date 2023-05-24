@@ -17,9 +17,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Hotel booking app <a name="about-project"></a>
+# 📖 Cottage booking app <a name="about-project"></a>
 
-**Hotel booking app** is a booking app that allows users to search a list of available rooms and make 24-hour reservations. This is the frontend repository.
+**Cottage booking app** is a booking app that allows users to search a list of available cottages and make reservations. This is the frontend repository.
 
 Backend repo is [here](https://github.com/billymohajeri/Final-Group-Capstone-Backend)
 

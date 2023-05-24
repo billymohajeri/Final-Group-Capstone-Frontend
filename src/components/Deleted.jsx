@@ -5,7 +5,7 @@ function RecentlyDeletedRooms() {
 
   return (
     <div className="deletedContainer">
-      <h1 id="deletedName">RECENTLY DELETED ROOMS</h1>
+      <h1 id="deletedName">RECENTLY DELETED COTTAGES</h1>
       <ul id="ul">
         {deletedRooms.map((room) => (
           <li id="li" key={room.id}>

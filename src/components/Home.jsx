@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { useGetRoomsDetailsQuery } from '../api/roomsData';
 import './css/home.css';
 import Sidebar from './Sidebar';
+import MobileMenu from './MobileMenu';
 
 function Home() {
   const { data, error, isLoading } = useGetRoomsDetailsQuery();
@@ -31,11 +32,12 @@ function Home() {
 
   return (
     <div className="bigContainer">
+      <MobileMenu />
       <Sidebar />
       <div className="mainContainer">
         <div className="roomsBox">
-          <h1>LATEST ROOMS</h1>
-          <h2>Please select a room</h2>
+          <h1>LATEST COTTAGES</h1>
+          <h2>Please select a cottage</h2>
           <span className="separatorTop">. . . . . . . . . . . . . .</span>
           <ul className="roomContainer">
             {data.map((room) => (

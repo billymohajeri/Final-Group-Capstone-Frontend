@@ -5,7 +5,7 @@ import {
 export const DASHBOARD_SIDEBAR_LINKS = [
   {
     key: 'rooms',
-    label: 'Rooms',
+    label: 'Cottages',
     path: '/home',
   },
   {
@@ -20,12 +20,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
   },
   {
     key: 'add_room',
-    label: 'Add a Room',
+    label: 'Add a Cottage',
     path: '/room/new',
   },
   {
     key: 'delete_room',
-    label: 'Delete a Room',
+    label: 'Delete a Cottage',
     path: '/rooms/delete',
   },
 ];

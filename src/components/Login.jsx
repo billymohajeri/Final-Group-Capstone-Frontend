@@ -48,7 +48,7 @@ const Login = () => {
         <FaGripLines />
       </div>
       <div>
-        <h1 className="loginH1">Embark on a Journey, Reserve Your Stay!</h1>
+        <h1 className="loginH1">Escape the Ordinary, Discover Your Dream Cottage!</h1>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="username">

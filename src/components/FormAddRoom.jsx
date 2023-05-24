@@ -87,7 +87,7 @@ const FormAddRoom = () => {
           </label>
           <br />
           <label htmlFor={roomService}>
-            <span>Room Service</span>
+            <span>Cottage Service</span>
             <br />
             <input
               type="text"
@@ -126,7 +126,7 @@ const FormAddRoom = () => {
             type="submit"
             className="my-bg-green w-[180px] h-[35px] rounded-lg text-white"
           >
-            Create Room
+            Create Cottage
           </button>
         </form>
       </div>

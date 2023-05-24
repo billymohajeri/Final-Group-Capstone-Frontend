@@ -32,12 +32,12 @@ const MobileMenu = () => {
           </li>
           <li>
             <Link to="/room/new">
-              <p>Add Room</p>
+              <p>Add Cottage</p>
             </Link>
           </li>
           <li>
             <Link to="/rooms/delete">
-              <p>Remove Room</p>
+              <p>Remove Cottage</p>
             </Link>
           </li>
         </ul>

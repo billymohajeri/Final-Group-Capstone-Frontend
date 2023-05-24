@@ -68,8 +68,12 @@ const Sidebar = () => {
   return (
     <div className="bg-neutral-50 p-3 fixed h-screen flex flex-col text-neutral-900 hidden md:flex">
       <div className="flex items-center gap-2 px-1 py-3 pt-3 pb-9">
-        <img className="logo" src="/hotel.png" alt="" />
-        <span className="text-neutral-900 text-lg">Hotel Booking</span>
+        {/* <img className="logo" src="/logo.png" alt="" /> */}
+        <span className="logo-type">
+          Cottage
+          <br />
+          Booking
+        </span>
       </div>
       <div className="flex-1 flex flex-col pt-20">
         {DASHBOARD_SIDEBAR_LINKS.map((item) => (
@@ -86,7 +90,7 @@ const Sidebar = () => {
           </Link>
         ))}
       </div>
-      <p className="p-2">@2023 Hotel Bookings</p>
+      <p className="p-2">@2023 Cottage Booking</p>
     </div>
   );
 };

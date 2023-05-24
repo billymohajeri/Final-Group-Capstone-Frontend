@@ -78,11 +78,11 @@ const FormAddReservation = ({ roomId }) => {
 
   return (
     <div className="addReservationForm flex flex-col justify-center items-center h-screen">
-      <p className="text-4xl text-white font-medium letter-spacing">RESERVE A ROOM</p>
+      <p className="text-4xl text-white font-medium letter-spacing">RESERVE A COTTAGE</p>
       <p className="border-b border-white opacity-40 m-6" />
       <p className="reservationSlogan text-white">
-        There are rooms from a variety of locations available.
-        Fill out the form below to reserve a room by selecting from the available options.
+        There are cottages from a variety of locations available.
+        Fill out the form below to reserve one of them by selecting from the available options.
       </p>
       {errorData && <div className="error">{errorData.base}</div>}
       <form
@@ -108,7 +108,7 @@ const FormAddReservation = ({ roomId }) => {
           value={room}
           className="w-[300px] bg-white border-2 border-white-500 rounded-lg h-[35px]"
         >
-          <option className="text-black">Select a room...</option>
+          <option className="text-black">Select a cottage...</option>
           {data.map((room) => (
             <option key={room.id} value={room.id} id={room.id}>
               {' '}

@@ -10,6 +10,7 @@ import {
 import RecentlyDeletedRooms from './Deleted';
 import './css/delete.css';
 import Sidebar from './Sidebar';
+import MobileMenu from './MobileMenu';
 
 function DeleteRoom() {
   const { data, error, isLoading } = useGetRoomsDetailsQuery();
@@ -57,6 +58,7 @@ function DeleteRoom() {
 
   return (
     <div className="bigContainer">
+      <MobileMenu />
       <Sidebar />
       <div className="deleteContainer">
         <div className="rooms">
