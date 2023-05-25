@@ -18,7 +18,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password === passwordConfirmation) {
-      const response = await fetch('https://rails-production-68eb.up.railway.app/users', {
+      const response = await fetch('https://cottage-booking.onrender.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
