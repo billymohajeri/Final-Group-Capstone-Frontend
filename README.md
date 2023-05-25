@@ -71,7 +71,7 @@ Backend repo is [here](https://github.com/billymohajeri/Final-Group-Capstone-Bac
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Not yet...]()
+[Live Demo](https://final-group-capstone-frontend-git-deploy-billymohajeri.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
