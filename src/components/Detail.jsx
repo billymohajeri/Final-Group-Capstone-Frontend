@@ -16,7 +16,7 @@ import {
   useGetRoomDataQuery,
   useCreateReservationMutation,
 } from '../api/detail';
-import { useCurrentUserQuery } from '../api/authLog';
+// import { useCurrentUserQuery } from '../api/authLog';
 import 'react-datepicker/dist/react-datepicker.css';
 import './css/roomDetail.css';
 import './css/home.css';
@@ -32,8 +32,8 @@ const DetailRoom = () => {
   const handleShow = () => setShowModal(true);
   const [date, setdate] = useState(new Date());
   const [city, setCity] = useState('');
-  const { data: currentUser } = useCurrentUserQuery();
-  const currentUserId = currentUser;
+  // const { data: currentUser } = useCurrentUserQuery();
+  // const currentUserId = currentUser;
   const dispatch = useDispatch();
   const [createReservation] = useCreateReservationMutation();
   const [errorData, setError] = useState(null);
