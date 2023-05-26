@@ -72,9 +72,9 @@ const FormAddReservation = ({ roomId }) => {
       });
   };
 
-  if (!currentUser || !currentUser.username) {
-    return [];
-  }
+  // if (!currentUser || !currentUser.username) {
+  //   return [];
+  // }
 
   return (
     <div className="addReservationForm flex flex-col justify-center items-center h-screen">
