@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { useCurrentUserQuery } from '../api/authLog';
@@ -78,15 +78,17 @@ const Reservations = () => {
     );
   }
 
-  // if (userError) {
-  //   return (
-  //     <p>
-  //       You are not authorized to view this page. Please
-  //       {' '}
-  //       <Link to="/"> Log in</Link>
-  //     </p>
-  //   );
-  // }
+  if (userError) {
+    console.log(userError);
+
+    // return (
+    //   <p>
+    //     You are not authorized to view this page. Please
+    //     {' '}
+    //     <Link to="/"> Log in</Link>
+    //   </p>
+    // );
+  }
 
   if (error) {
     return (
