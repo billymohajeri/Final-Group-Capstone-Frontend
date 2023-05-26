@@ -18,7 +18,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password === passwordConfirmation) {
-      const response = await fetch('https://cottage-booking.onrender.com/users', {
+      const response = await fetch('http://localhost:3000/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
