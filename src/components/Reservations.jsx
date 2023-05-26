@@ -78,30 +78,30 @@ const Reservations = () => {
     );
   }
 
-  if (userError) {
-    console.log(userError);
+  console.log(userError, error);
+  // if (userError) {
 
-    // return (
-    //   <p>
-    //     You are not authorized to view this page. Please
-    //     {' '}
-    //     <Link to="/"> Log in</Link>
-    //   </p>
-    // );
-  }
+  //   // return (
+  //   //   <p>
+  //   //     You are not authorized to view this page. Please
+  //   //     {' '}
+  //   //     <Link to="/"> Log in</Link>
+  //   //   </p>
+  //   // );
+  // }
 
-  if (error) {
-    return (
-      <p>
-        Error:
-        {error.message}
-      </p>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <p>
+  //       Error:
+  //       {error.message}
+  //     </p>
+  //   );
+  // }
 
-  if (!currentUserData || !currentUserData.id) {
-    return [];
-  }
+  // if (!currentUserData || !currentUserData.id) {
+  //   return [];
+  // }
 
   const userReservations = reservationsData.filter(
     (reservation) => reservation.user_id === currentUserData.id,
