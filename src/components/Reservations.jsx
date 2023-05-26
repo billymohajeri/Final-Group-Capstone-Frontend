@@ -78,15 +78,15 @@ const Reservations = () => {
     );
   }
 
-  if (userError) {
-    return (
-      <p>
-        You are not authorized to view this page. Please
-        {' '}
-        <Link to="/"> Log in</Link>
-      </p>
-    );
-  }
+  // if (userError) {
+  //   return (
+  //     <p>
+  //       You are not authorized to view this page. Please
+  //       {' '}
+  //       <Link to="/"> Log in</Link>
+  //     </p>
+  //   );
+  // }
 
   if (error) {
     return (
