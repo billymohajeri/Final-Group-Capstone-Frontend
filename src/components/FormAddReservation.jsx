@@ -73,7 +73,9 @@ const FormAddReservation = ({ roomId }) => {
   };
 
   if (!currentUser || !currentUser.username) {
-    return [];
+    console.log(currentUser.username);
+    console.log(currentUser);
+    // return [];
   }
 
   return (
