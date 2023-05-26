@@ -72,11 +72,11 @@ const FormAddReservation = ({ roomId }) => {
       });
   };
 
-  if (!currentUser || !currentUser.username) {
-    console.log(currentUser.username);
-    console.log(currentUser);
-    // return [];
-  }
+  // if (!currentUser || !currentUser.username) {
+  //   console.log(currentUser.username);
+  //   console.log(currentUser);
+  //   return [];
+  // }
 
   return (
     <div className="addReservationForm flex flex-col justify-center items-center h-screen">
@@ -94,14 +94,15 @@ const FormAddReservation = ({ roomId }) => {
         <label htmlFor="username" style={{ display: 'none' }}>
           <span className="text-white">Userame</span>
           <br />
-          <input
+          {/* <input
             type="text"
             value={currentUser.username || ''}
             name="username"
             readOnly
-            className="w-[300px] bg-transparent border-2 border-white-500 rounded-lg h-[35px] text-white"
+            className="w-[300px] bg-transparent border-2
+            border-white-500 rounded-lg h-[35px] text-white"
             required
-          />
+          /> */}
         </label>
         <br />
         <select
