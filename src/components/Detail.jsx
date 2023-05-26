@@ -54,7 +54,6 @@ const DetailRoom = () => {
       city,
       room_name: data.name,
       room_id: data.id,
-      user_id: currentUserId.id,
       date: date.toISOString(),
     };
     try {
